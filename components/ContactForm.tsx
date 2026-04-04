@@ -13,66 +13,64 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
+      className="glass-card space-y-5 p-7 sm:p-10"
     >
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-5 sm:grid-cols-2">
         <label className="block">
-          <span className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-stone-500">
-            Name
-          </span>
+          <span className="label text-text-muted mb-2 block">Name</span>
           <input
             name="name"
             required
-            className="w-full rounded-xl border border-white/10 bg-[#141210] px-4 py-3 text-sm text-stone-100 outline-none ring-amber-500/40 transition placeholder:text-stone-600 focus:border-amber-500/50 focus:ring-2"
+            className="input-field"
             placeholder="Your name"
           />
         </label>
         <label className="block">
-          <span className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-stone-500">
-            Email
-          </span>
+          <span className="label text-text-muted mb-2 block">Email</span>
           <input
             type="email"
             name="email"
             required
-            className="w-full rounded-xl border border-white/10 bg-[#141210] px-4 py-3 text-sm text-stone-100 outline-none ring-amber-500/40 transition placeholder:text-stone-600 focus:border-amber-500/50 focus:ring-2"
+            className="input-field"
             placeholder="you@example.com"
           />
         </label>
       </div>
       <label className="block">
-        <span className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-stone-500">
-          Subject
-        </span>
+        <span className="label text-text-muted mb-2 block">Subject</span>
         <input
           name="title"
-          className="w-full rounded-xl border border-white/10 bg-[#141210] px-4 py-3 text-sm text-stone-100 outline-none ring-amber-500/40 transition placeholder:text-stone-600 focus:border-amber-500/50 focus:ring-2"
-          placeholder="Collaboration, booking…"
+          className="input-field"
+          placeholder="Collaboration, booking..."
         />
       </label>
       <label className="block">
-        <span className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-stone-500">
-          Message
-        </span>
+        <span className="label text-text-muted mb-2 block">Message</span>
         <textarea
           name="message"
           required
           rows={6}
-          className="w-full resize-y rounded-xl border border-white/10 bg-[#141210] px-4 py-3 text-sm text-stone-100 outline-none ring-amber-500/40 transition placeholder:text-stone-600 focus:border-amber-500/50 focus:ring-2"
+          className="input-field resize-y"
           placeholder="Tell me about your project"
         />
       </label>
-      {status === "sent" ? (
-        <p className="text-sm text-emerald-400/90">
-          Thanks — your message is ready to send. Connect this form to your
-          email provider or API when you deploy.
-        </p>
-      ) : null}
-      <button
-        type="submit"
-        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-200 via-amber-100 to-amber-300 px-8 py-3 text-sm font-semibold text-stone-900 shadow-lg shadow-amber-900/20 transition hover:brightness-105 active:scale-[0.98]"
-      >
+
+      {status === "sent" && (
+        <div className="flex items-center gap-2 rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-4 py-3">
+          <svg className="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <p className="text-sm text-emerald-400">
+            Message sent! I&apos;ll get back to you soon.
+          </p>
+        </div>
+      )}
+
+      <button type="submit" className="btn-primary w-full sm:w-auto">
         Send message
+        <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+        </svg>
       </button>
     </form>
   );

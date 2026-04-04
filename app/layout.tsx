@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { DM_Sans, Fraunces } from "next/font/google";
+import { Outfit, Playfair_Display } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   display: "swap",
 });
@@ -20,7 +20,7 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: {
     default: site.title,
-    template: `%s · ${site.name}`,
+    template: `%s — ${site.name}`,
   },
   description: site.description,
   icons: { icon: "/images/favicon.png" },
@@ -39,10 +39,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${dmSans.variable} ${fraunces.variable} min-h-screen bg-[#0c0a09] font-sans antialiased text-stone-100`}
+        className={`${outfit.variable} ${playfair.variable} noise-bg min-h-screen bg-bg-primary font-sans antialiased text-text-primary`}
       >
         <Header />
-        <div className="pt-16 sm:pt-[4.25rem]">{children}</div>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

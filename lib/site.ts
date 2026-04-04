@@ -1,12 +1,12 @@
 export const site = {
   name: "Salima Elmahraoui",
-  title: "Salima Elmahraoui — Fashion Model",
+  title: "Salima Elmahraoui — Fashion Model & Creative",
   description:
     "Professional fashion model based in Morocco. Portfolio, collaborations, and contact.",
   tagline:
-    "Modeling is about fantasy, getting people to buy into a lifestyle and a vision.",
+    "Where fashion meets artistry — every frame tells a story.",
   about:
-    "I'm Salima Elmahraoui, a professional fashion model. I'm from Morocco.",
+    "I'm Salima Elmahraoui, a professional fashion model based in Casablanca, Morocco. My work spans high-fashion editorials, brand campaigns, and creative collaborations with designers like Bougroug and Nitah Official. Featured in Nataal Media, I bring authenticity and cultural depth to every project.",
   contact: {
     address: "Ain Sbaa, Casablanca",
     phone: "+212 607 761 091",
@@ -17,10 +17,10 @@ export const site = {
     twitter: "https://twitter.com/",
   },
   stats: [
-    { value: "100", label: "Projects completed" },
+    { value: "100+", label: "Projects completed" },
     { value: "200+", label: "Working hours" },
-    { value: "100", label: "Positive feedback" },
-    { value: "120", label: "Happy clients" },
+    { value: "100%", label: "Positive feedback" },
+    { value: "120+", label: "Happy clients" },
   ],
   quotes: [
     {
